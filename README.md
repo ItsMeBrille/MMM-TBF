@@ -2,7 +2,7 @@
 
 ### Introduction
 
-MMM-TBF is a MagicMirror2 module that displays abbreviations and their full form from a JSON data file. The abbreviations are shown in a randomized order, making it an interactive and educational addition to your MagicMirror2 setup. TBF is short for the Norwegian word Trebokstavsforkortelse, Three word abbreviation
+MMM-TBF is a MagicMirror2 module that displays abbreviations and their full form from a JSON data file. The abbreviations are shown in a randomized order, making it an interactive and educational addition to your MagicMirror2 setup. The default list of abbreviations is a list of Norwegian Defence terms. The name TBF is short for the Norwegian word Trebokstavsforkortelse, Three word abbreviation
 
 ### Installation
 
@@ -28,8 +28,8 @@ To use MMM-TBF, add it to your MagicMirror configuration file (usually located a
   position: "top_bar", // Adjust the position as needed
   config: {
     // Optional configuration options:
-    // updateInterval: 15000, // Update interval in milliseconds (default: 15 seconds)
-    // url: "wordlist.json", // URL to the JSON data file (default: wordlist.json)
+    // updateInterval: 15, // Update interval in seconds (default: 15)
+    // url: "abbreviations.json", // URL to the JSON data file (default: abbreviations.json)
     // randomOrder: true, // Display words in random order (default: true)
   }
 },
