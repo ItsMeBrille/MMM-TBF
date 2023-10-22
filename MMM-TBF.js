@@ -4,6 +4,7 @@ Module.register("MMM-TBF", {
         updateInterval: 15, // Update interval in seconds (15 by default)
         url: "modules/MMM-TBF/abbreviations.json", // URL to the JSON data file
         randomOrder: true, // Display words in random order
+        characterLimit: 100, // Default character limit
     },
 
     // Start method called when the module is loaded
@@ -59,7 +60,14 @@ Module.register("MMM-TBF", {
 
         if (this.words.length > 0) {
             var currentWord = this.words[this.currentIndex];
-            wordElement.innerHTML = currentWord.word;
+            var word = currentWord.word;
+
+            // Check if character limit is specified
+            if (this.config.characterLimit && word.length > this.config.characterLimit) {
+                word = word.substring(0, this.config.characterLimit) + '...';
+            }
+
+            wordElement.innerHTML = word;
             wordElement.className = "medium light bright";
             translationElement.innerHTML = currentWord.description;
             translationElement.className = "small light";
